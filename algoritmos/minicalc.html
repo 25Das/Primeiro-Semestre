@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Operações Aritméticas</title>
+
+		<script>
+			function soma(num1, num2) {
+				var num1 = document.getElementById("n1").value;
+				var num2 = document.getElementById("n2").value;
+				var resultado = parseInt(num1) + parseInt(num2);
+				document.getElementById("saida").value = resultado;
+			}
+			function sub(num1, num2) {
+				var num1 = document.getElementById("n1").value;
+				var num2 = document.getElementById("n2").value;
+				var resultado = num1 - num2;
+				document.getElementById("saida").value = resultado;
+			}
+			function multi(num1, num2) {
+				var num1 = document.getElementById("n1").value;
+				var num2 = document.getElementById("n2").value;
+				var resultado = num1 * num2;
+				document.getElementById("saida").value = resultado;
+			}
+			function div(num1, num2) {
+				var num1 = document.getElementById("n1").value;
+				var num2 = document.getElementById("n2").value;
+				var resultado = num1 / num2;
+				document.getElementById("saida").value = resultado;
+			}
+			function resto(num1, num2) {
+				var num1 = document.getElementById("n1").value;
+				var num2 = document.getElementById("n2").value;
+				var resultado = num1 % num2;
+				document.getElementById("saida").value = resultado;
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>Operações Aritméticas</h1>
+			<p>
+				<label>Digite o primeiro número: </label>
+				<input id="n1" type="text" />
+			</p>
+			<p>
+				<label>Digite o segundo número: </label>
+				<input id="n2" type="text" />
+			</p>
+			<p>
+				<button onclick="soma()">+</button>
+				<button onclick="sub()">-</button>
+				<button onclick="multi()">*</button>
+				<button onclick="div()">/</button>
+				<button onclick="resto()">%</button>
+			</p>
+			<p>
+				<label>O Resultado é: </label>
+				<input type="text" id="saida" disabled />
+			</p>
+		</div>
+	</body>
+</html>

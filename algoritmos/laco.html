@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tabuada</title>
+		<style>
+			td {
+				text-align: right;
+			}
+			.tabuada {
+				width: 90px;
+				padding: 10px;
+				border: 1px solid #ff5500;
+				border-radius: 5px;
+				background-color: rgba(250, 217, 125, 0.363);
+				margin: 10px;
+				float: left;
+			}
+			.tCor {
+				color: red;
+			}
+			/*table tr td {
+				border: 1px solid slategray;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="area"></div>
+		<script>
+			texto = '<h2>Tabuadas</h2>';
+			for (tab = 1; tab < 11; tab++) {
+				texto += "<div class = 'tabuada'><table>";
+				for (var c = 1; c < 11; c++) {
+					resultado = c * tab;
+					texto += '<tr>';
+					texto += '<td>' + c + '</td>';
+					texto += '<td> x </td>';
+					texto += "<td class='tCor'>" + tab + '</td>';
+					texto += '<td> = </td>';
+					texto += '<td>' + resultado + '</td>';
+					texto += '</tr>';
+				}
+				texto += '</table></div>';
+			}
+			document.getElementById('area').innerHTML = texto;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora</title>
+		<style>
+			.area {
+				background-color: rgba(0, 0, 0, 0.95);
+				padding: 20px;
+				width: 200px;
+			}
+			button {
+				width: 40px;
+				height: 40px;
+				margin: 2px;
+				border-radius: 20px;
+				border: 1px solid rgba(255, 255, 255, 0.199);
+				color: white;
+				background-color: rgba(50, 50, 53, 0.863);
+			}
+			button:hover {
+				background-color: rebeccapurple;
+			}
+			#visor {
+				width: 185px;
+				height: 35px;
+				background-color: rgba(50, 50, 53, 0.863);
+				border: 1px solid rgba(50, 50, 53, 0.863);
+				color: white;
+				font-size: xx-large;
+				text-align: right;
+				margin-bottom: 15px;
+				padding: 4px;
+			}
+			P {
+				margin: 2px;
+				padding: 0px;
+				margin-top: 5px;
+			}
+			.vermelho {
+				background-color: rgba(255, 122, 122, 122);
+			}
+			.verde {
+				background-color: yellowgreen;
+			}
+		</style>
+		<script>
+			m_visor = 0;
+			function tecla(letra) {
+				if (m_visor == "" && letra != ".") {
+					document.getElementById("visor").value = letra;
+					m_visor = letra;
+				} else {
+					m_visor += letra;
+					document.getElementById("visor").value = m_visor;
+				}
+			}
+			function limpar() {
+				m_visor = 0;
+				document.getElementById("visor").value = "0";
+			}
+			function igual() {
+				var temp = document.getElementById("visor").value;
+				var resultado = eval(temp);
+				document.getElementById("visor").value = resultado;
+				m_visor = document.getElementById("visor").value;
+			}
+			function mais_menos() {
+				var temp = document.getElementById("visor").value;
+				var numero = parseFloat(temp);
+				var resultado = numero * -1;
+				document.getElementById("visor").value = resultado;
+				m_visor = documento.getElementById("visor").value;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="area">
+			<input type="text" id="visor" value="0" />
+			<p>
+				<button onclick="limpar()" class="vermelho">C</button>
+				<button onclick="tecla('(')">(</button>
+				<button onclick="tecla(')')">)</button>
+				<button onclick="tecla('+')">+</button>
+			</p>
+			<p>
+				<button onclick="tecla('7')">7</button>
+				<button onclick="tecla('8')">8</button>
+				<button onclick="tecla('9')">9</button>
+				<button onclick="tecla('-')">-</button>
+			</p>
+			<p>
+				<button onclick="tecla('4')">4</button>
+				<button onclick="tecla('5')">5</button>
+				<button onclick="tecla('6')">6</button>
+				<button onclick="tecla('*')">*</button>
+			</p>
+			<p>
+				<button onclick="tecla('1')">1</button>
+				<button onclick="tecla('2')">2</button>
+				<button onclick="tecla('3')">3</button>
+				<button onclick="tecla('/')">/</button>
+			</p>
+			<p>
+				<button onclick="tecla('0')">0</button>
+				<button onclick="tecla(',')">,</button>
+				<button onclick="mais_menos()">+/-</button>
+				<button onclick="igual()" class="verde">=</button>
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Operações</title>
+
+		<script>
+			function somar(n1, n2) {
+				var n1 = document.getElementById("n1").value;
+				var n2 = document.getElementById("n2").value;
+				var resultado = parseInt(n1) + parseInt(n2);
+				document.getElementById("saida1").value = resultado;
+			}
+			function subtrair(n1, n2) {
+				var n1 = document.getElementById("n1").value;
+				var n2 = document.getElementById("n2").value;
+				var resultado = n1 - n2;
+				document.getElementById("saida2").value = resultado;
+			}
+			function multiplicar(n1, n2) {
+				var n1 = document.getElementById("n1").value;
+				var n2 = document.getElementById("n2").value;
+				var resultado = n1 * n2;
+				document.getElementById("saida3").value = resultado;
+			}
+			function dividir(n1, n2) {
+				var n1 = document.getElementById("n1").value;
+				var n2 = document.getElementById("n2").value;
+				var resultado = n1 / n2;
+				document.getElementById("saida4").value = resultado;
+			}
+			function resto(n1, n2) {
+				var n1 = document.getElementById("n1").value;
+				var n2 = document.getElementById("n2").value;
+				var resultado = n1 % n2;
+				document.getElementById("saida5").value = resultado;
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>Operações</h1>
+			<p>
+				<label>Informe um número: </label>
+				<input id="n1" type="text" />
+			</p>
+			<p>
+				<label>Informe outro número: </label>
+				<input id="n2" type="text" />
+			</p>
+			<p>
+				<button
+					onclick="somar(), subtrair(), multiplicar(), dividir(), resto()"
+				>
+					Calcular
+				</button>
+			</p>
+			<p>
+				<label>A soma é: </label>
+				<input type="text" id="saida1" disabled />
+			</p>
+			<p>
+				<label>A subtração é: </label>
+				<input type="text" id="saida2" disabled />
+			</p>
+			<p>
+				<label onclick="">A multiplicação é: </label>
+				<input type="text" id="saida3" disabled />
+			</p>
+			<p>
+				<label>A divisão é: </label>
+				<input type="text" id="saida4" disabled />
+			</p>
+			<p>
+				<label>O resto é: </label>
+				<input type="text" id="saida5" disabled />
+			</p>
+		</div>
+	</body>
+</html>
