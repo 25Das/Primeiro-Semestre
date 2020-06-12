@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Organizador de Churrasco</title>
+		<script>
+			var nome = new Array();
+			var cel = new Array();
+			cont = 0;
+			function cadastrar() {
+				nome[cont] = document.getElementById('nome').value;
+				document.getElementById('nome').value = '';
+				cel[cont] = document.getElementById('cel').value;
+				document.getElementById('cel').value = '';
+				cont++;
+				imprimir();
+			}
+			function imprimir() {
+				texto = '<h3>Lista de Convidados</h3>';
+				for (let c = 0; c < cont; c++) {
+					texto += c + 1 + '. ';
+					texto += nome[c] + ' - ';
+					texto += cel[c];
+					texto += '<br>';
+				}
+				document.getElementById('listaConvidados').innerHTML = texto;
+			}
+			function compras() {
+				var texto = '<h3>Itens para o Churrasco</h3>';
+				var carne = (350 * cont) / 1000;
+				var frango = (150 * cont) / 1000;
+				var toscana = (100 * cont) / 1000;
+				var cerveja = cont * 4;
+				var refri = cont * 0.85;
+				var pinga = (150 * cont) / 1000;
+				var limao = (200 * cont) / 1000;
+
+				texto += 'Carne: ';
+				texto += carne.toFixed(2) + 'kg<br>';
+				texto += 'Frango: ';
+				texto += frango.toFixed(2) + 'kg<br>';
+				texto += 'Linguiça Toscana: ';
+				texto += toscana.toFixed(2) + 'kg<br>';
+				texto += 'Cerveja: ';
+				texto += cerveja.toFixed(0) + ' latas 350ml<br>';
+				texto += 'Refrigerante: ';
+				texto += refri.toFixed(0) + ' latas 350ml<br>';
+				texto += 'Pinga: ';
+				texto += pinga.toFixed(0) + ' garrafas<br>';
+				texto += 'Limão: ';
+				texto += limao.toFixed(0) + ' kg<br>';
+
+				document.getElementById('area').innerHTML = texto;
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h3>Organizador de Churrasco</h3>
+			<p>
+				<label for="nome">Nome: </label>
+				<input id="nome" type="text" />
+			</p>
+			<p>
+				<label for="cel">Celular: </label>
+				<input id="cel" type="text" />
+			</p>
+			<button onclick="cadastrar()">Cadastrar</button>
+			<button onclick="compras()">Calcular Itens</button>
+		</div>
+		<div id="listaConvidados">
+			<h3>Lista de Convidados</h3>
+			<p>Sem nenhum convidado</p>
+		</div>
+		<div id="area"></div>
+	</body>
+</html>
