@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cálculo de Imposto de Renda</title>
+		<script>
+			function calcular() {
+				salario = parseFloat(document.getElementById('salario').value);
+				resultado = 0;
+
+				if (salario >= 0 && salario <= 1903.98) {
+					imposto = 0;
+				} else if (salario >= 1903.99 && salario <= 2826.65) {
+					imposto = 7.5;
+				} else if (salario >= 2826.66 && salario <= 3751.05) {
+					imposto = 15;
+				} else if (salario >= 3751.06 && salario <= 4664.68) {
+					imposto = 22.5;
+				} else {
+					imposto = 27.5;
+				}
+
+				resultado = salario * (imposto / 100);
+				document.getElementById('ir').value = imposto + '% = R$' + resultado.toFixed(2);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h3>Cálculo de Imposto de Renda</h3>
+			<p>
+				<label for="reg">Registro: </label>
+				<input type="number" name="reg" id="reg" />
+			</p>
+			<p>
+				<label for="nome">Nome: </label>
+				<input type="text" name="nome" id="nome" />
+			</p>
+			<p>
+				<label for="salario">Salário: </label>
+				<input type="number" name="salario" id="salario" />
+			</p>
+			<p>
+				<button onclick="calcular()">Calcular IR</button>
+			</p>
+			<p>
+				<label for="ir">Imposto de Renda: </label>
+				<input type="text" name="ir" id="ir" disabled />
+			</p>
+		</div>
+	</body>
+</html>
