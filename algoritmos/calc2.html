@@ -5,32 +5,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Calculadora</title>
 		<script>
-			function soma() {
-				num1 = document.getElementById('n1').value;
-				num2 = document.getElementById('n2').value;
-				resultado = num1 + num2;
-				document.getElementById('resultado').value = 'A Soma é: ' + resultado;
-			}
+			function operacao(op) {
+				num1 = parseFloat(document.getElementById('n1').value);
+				num2 = parseFloat(document.getElementById('n2').value);
+				if (op == '+') {
+					resultado = num1 + num2;
+				} else if (op == '-') {
+					resultado = num1 - num2;
+				} else if (op == '*') {
+					resultado = num1 * num2;
+				} else {
+					resultado = num1 / num2;
+				}
 
-			function sub() {
-				num1 = document.getElementById('n1').value;
-				num2 = document.getElementById('n2').value;
-				resultado = num1 - num2;
-				document.getElementById('resultado').value = 'A Subtração é: ' + resultado;
-			}
-
-			function multi() {
-				num1 = document.getElementById('n1').value;
-				num2 = document.getElementById('n2').value;
-				resultado = num1 * num2;
-				document.getElementById('resultado').value = 'A Multiplicação é: ' + resultado;
-			}
-
-			function div() {
-				num1 = document.getElementById('n1').value;
-				num2 = document.getElementById('n2').value;
-				resultado = num1 / num2;
-				document.getElementById('resultado').value = 'A Divisão é: ' + resultado;
+				document.getElementById('resultado').value = resultado;
 			}
 		</script>
 	</head>
@@ -45,13 +33,13 @@
 			<input type="number" id="n2" />
 		</p>
 		<p>
-			<button onclick="soma()">+</button>
-			<button onclick="sub()">-</button>
-			<button onclick="multi()">*</button>
-			<button onclick="div()">/</button>
+			<button onclick="operacao('+')">+</button>
+			<button onclick="operacao('-')">-</button>
+			<button onclick="operacao('*')">*</button>
+			<button onclick="operacao('/')">/</button>
 		</p>
 		<p>
-			<label for="resultado">Resultado</label>
+			<label for="resultado">O Resultado é: </label>
 			<input type="text" id="resultado" disabled />
 		</p>
 	</body>
