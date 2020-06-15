@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora</title>
+		<script>
+			function soma() {
+				num1 = document.getElementById('n1').value;
+				num2 = document.getElementById('n2').value;
+				resultado = num1 + num2;
+				document.getElementById('resultado').value = 'A Soma é: ' + resultado;
+			}
+
+			function sub() {
+				num1 = document.getElementById('n1').value;
+				num2 = document.getElementById('n2').value;
+				resultado = num1 - num2;
+				document.getElementById('resultado').value = 'A Subtração é: ' + resultado;
+			}
+
+			function multi() {
+				num1 = document.getElementById('n1').value;
+				num2 = document.getElementById('n2').value;
+				resultado = num1 * num2;
+				document.getElementById('resultado').value = 'A Multiplicação é: ' + resultado;
+			}
+
+			function div() {
+				num1 = document.getElementById('n1').value;
+				num2 = document.getElementById('n2').value;
+				resultado = num1 / num2;
+				document.getElementById('resultado').value = 'A Divisão é: ' + resultado;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Calculadora</h1>
+		<p>
+			<label for="n1">Primeiro número: </label>
+			<input type="number" id="n1" />
+		</p>
+		<p>
+			<label for="n2">Segundo número: </label>
+			<input type="number" id="n2" />
+		</p>
+		<p>
+			<button onclick="soma()">+</button>
+			<button onclick="sub()">-</button>
+			<button onclick="multi()">*</button>
+			<button onclick="div()">/</button>
+		</p>
+		<p>
+			<label for="resultado">Resultado</label>
+			<input type="text" id="resultado" disabled />
+		</p>
+	</body>
+</html>
