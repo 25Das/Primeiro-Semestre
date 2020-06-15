@@ -3,7 +3,161 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Planilha de Notas/title>
+		<title>Planilha de Notas</title>
+		<script>
+			function media() {
+				for (let c = 0; c <= 8; c++) {
+					med = 0;
+					ex = parseFloat(document.getElementsByName('ex')[c].value);
+					a1 = parseFloat(document.getElementsByName('a1')[c].value);
+					a2 = parseFloat(document.getElementsByName('a2')[c].value);
+
+					if (!isNaN(ex) && !isNaN(a1) && !isNaN(a2)) {
+						med = ex + a1 + a2;
+					} else {
+						a3 = parseFloat(document.getElementsByName('a3')[c].value);
+						if (isNaN(a1) && !isNaN(a3)) {
+							med = ex + a3 + a2;
+						}
+						if (isNaN(a2) && !isNaN(a3)) {
+							med = ex + a1 + a3;
+						}
+						if (isNaN(a3) && !isNaN(ex) && !isNaN(a2)) {
+							med = ex + a2;
+						}
+						if (isNaN(a3) && !isNaN(ex) && !isNaN(a1)) {
+							med = ex + a1;
+						}
+						if (isNaN(ex) && !isNaN(a1) && !isNaN(a2) && !isNaN(a3)) {
+							med = a1 + a2 + a3;
+						}
+						if (isNaN(a1) && isNaN(a2) && !isNaN(ex) && !isNaN(a3)) {
+							med = ex + a3;
+						}
+						if (isNaN(ex) && isNaN(a3) && !isNaN(a1) && !isNaN(a2)) {
+							med = a1 + a2;
+						}
+					}
+					document.getElementsByName('me')[c].value = med;
+				}
+			}
+			function situacao() {
+				for (let c = 0; c <= 8; c++) {
+					me = parseFloat(document.getElementsByName('me')[c].value);
+					if (me >= 6) {
+						document.getElementsByName('st')[c].value = 'Aprovado';
+					} else {
+						document.getElementsByName('st')[c].value = 'Reprovado';
+					}
+				}
+			}
+		</script>
 	</head>
-	<body></body>
+	<body>
+		<h1>Panilha de Notas</h1>
+		<table>
+			<tr>
+				<th>RA</th>
+				<th>Nome</th>
+				<th>Exercícios</th>
+				<th>A1</th>
+				<th>A2</th>
+				<th>A3</th>
+				<th>Média</th>
+				<th>Situação</th>
+			</tr>
+			<tr>
+				<td>12345-6</td>
+				<td>Amanda</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>23456-7</td>
+				<td>Aílton</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>34567-8</td>
+				<td>Beatriz</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>45678-9</td>
+				<td>Carlos</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>56789-0</td>
+				<td>Édson</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>67890-1</td>
+				<td>Flávia</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>78901-2</td>
+				<td>Fernando</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>89012-3</td>
+				<td>Marcos</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+			<tr>
+				<td>90123-4</td>
+				<td>Neli</td>
+				<td><input type="number" name="ex" /></td>
+				<td><input type="number" name="a1" /></td>
+				<td><input type="number" name="a2" /></td>
+				<td><input type="number" name="a3" /></td>
+				<td><input type="number" name="me" disabled /></td>
+				<td><input type="text" name="st" disabled /></td>
+			</tr>
+		</table>
+		<button onclick="media()">Calcular Médias</button>
+		<button onclick="situacao()">Analisar Situação</button>
+	</body>
 </html>
