@@ -8,66 +8,66 @@
 	<body>
 		<canvas id="meuCanvas" width="1000" height="700">
 			<script>
-				canvas = document.getElementById('meuCanvas')
-				context = canvas.getContext('2d')
+				canvas = document.getElementById('meuCanvas');
+				context = canvas.getContext('2d');
 
-				iniciar()
+				iniciar();
 				function iniciar() {
-					vidas = 3
-					pontos = 0
-					xPersona = 425
-					yPersona = 550
-					setaL = false
-					setaR = false
-					requestAnimationFrame(desenhar)
+					vidas = 3;
+					pontos = 0;
+					xPersona = 425;
+					yPersona = 550;
+					setaL = false;
+					setaR = false;
+					requestAnimationFrame(desenhar);
 				}
 
 				function desenhar() {
-					fundo()
-					persona()
-					requestAnimationFrame(desenhar)
+					fundo();
+					persona();
+					requestAnimationFrame(desenhar);
 				}
 
 				function fundo() {
-					var img = new Image()
-					img.src = '../spaceInvader/img/universo.png'
+					var img = new Image();
+					img.src = '../spaceInvader/img/universo.png';
 					img.onload = function () {
-						context.drawImage(img, 0, 0, canvas.width, canvas.height)
-					}
+						context.drawImage(img, 0, 0, canvas.width, canvas.height);
+					};
 				}
 				function persona() {
-					var per = new Image()
-					per.src = '../spaceInvader/img/personagem.png'
+					var per = new Image();
+					per.src = '../spaceInvader/img/personagem.png';
 					per.onload = function () {
-						context.drawImage(per, xPersona, yPersona, 128, 128)
-					}
+						context.drawImage(per, xPersona, yPersona, 128, 128);
+					};
 					if (setaL && xPersona > 0) {
-						xPersona -= 3
+						xPersona -= 3;
 					}
 					if (setaR && xPersona < canvas.width - 128) {
-						xPersona += 3
+						xPersona += 3;
 					}
 				}
 				document.addEventListener('keydown', function (evento) {
 					if (evento.keyCode == 37) {
-						setaL = true
-						setaR = false
+						setaL = true;
+						setaR = false;
 					}
 					if (evento.keyCode == 39) {
-						setaR = true
-						setaL = false
+						setaR = true;
+						setaL = false;
 					}
-				})
+				});
 				document.addEventListener('keyup', function (evento) {
 					if ((evento.keyCode = 37)) {
-						setaL = false
-						setaR = false
+						setaL = false;
+						setaR = false;
 					}
 					if ((evento.keyCode = 39)) {
-						setaR = false
-						setaL = false
+						setaR = false;
+						setaL = false;
 					}
-				})
+				});
 			</script>
 		</canvas>
 	</body>
