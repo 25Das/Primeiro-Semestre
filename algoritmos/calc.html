@@ -48,30 +48,30 @@
 		<script>
 			m_visor = 0;
 			function tecla(letra) {
-				if (m_visor == "" && letra != ".") {
-					document.getElementById("visor").value = letra;
+				if (m_visor == '' && letra != '.') {
+					document.getElementById('visor').value = letra;
 					m_visor = letra;
 				} else {
 					m_visor += letra;
-					document.getElementById("visor").value = m_visor;
+					document.getElementById('visor').value = m_visor;
 				}
 			}
 			function limpar() {
 				m_visor = 0;
-				document.getElementById("visor").value = "0";
+				document.getElementById('visor').value = '0';
 			}
 			function igual() {
-				var temp = document.getElementById("visor").value;
+				var temp = document.getElementById('visor').value;
 				var resultado = eval(temp);
-				document.getElementById("visor").value = resultado;
-				m_visor = document.getElementById("visor").value;
+				document.getElementById('visor').value = resultado;
+				m_visor = document.getElementById('visor').value;
 			}
 			function mais_menos() {
-				var temp = document.getElementById("visor").value;
+				var temp = document.getElementById('visor').value;
 				var numero = parseFloat(temp);
 				var resultado = numero * -1;
-				document.getElementById("visor").value = resultado;
-				m_visor = documento.getElementById("visor").value;
+				document.getElementById('visor').value = resultado;
+				m_visor = documento.getElementById('visor').value;
 			}
 		</script>
 	</head>
